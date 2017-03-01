@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slider</title>
+
+	<style >
+		#slide{
+			height: 400px;
+			position: relative;
+			width: 940px;
+			overflow:hidden;
+		}
+		#slide_wrap{
+			height: 400px;
+			position: absolute;
+			width: 3780px;
+			top: 0pt;
+			left: 0px;
+		}
+		#slider_wrap img{
+			float: left;
+		}
+		.input{
+			display: none;
+
+		}
+		.label{
+			background: white;
+			display: block;
+			height: 12px;
+			position: absolute;
+			width: 12px;
+			z-index: 2;
+			border-radius: 20px;
+			bottom: 10px;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+		}
+
+		#button4 {
+			right: 15px;
+		}
+
+		#button3 {
+			right: 35px;
+		}
+
+		#button2 {
+			right: 55px;
+		}
+
+		#button1 {
+			right: 75px;
+		}
+		#image1:checked ~ #button1,
+		#image2:checked ~ #button2,
+		#image3:checked ~ #button3,
+		#image4:checked ~ #button4{
+			width:7px;
+			height:7px;
+			margin-bottom:1px;
+			margin-right:2px;
+		}
+		#image1:checked ~ #slide_wrap {
+			left: 0pt;
+		}
+
+		#image2:checked ~ #slide_wrap {
+			left: -940px;
+		}
+
+		#image3:checked ~ #slide_wrap {
+			left: -1880px;
+		}
+
+		#image4:checked ~ #slide_wrap {
+			left: -2820px;
+		}
+		#slide_wrap{
+			/*--- code trước ---*/
+			-moz-transition:left 0.6s ease-in-out;
+			transition:left 0.6s ease-in-out;
+			-webkit-transition:left 0.6s ease-in-out;
+			-o-transition:left 0.6s ease-in-out;
+		}
+
+		.label{
+			/*--- code trước ---*/
+			-moz-transition:width 0.4s,height 0.4s ease;
+			-webkit-transition:width 0.4s,height 0.4s ease;
+			-o-transition:width 0.4s,height 0.4s ease;
+			transition:width 0.4s,height 0.4s ease;
+		}
+		/*css tiêu dề*/
+		h1{
+			width:940px;
+			z-index:1;
+			height:50px;
+			position:absolute;
+			bottom: 0;
+			left: -940px;
+			background-color:rgba(0,0,0,0.8);
+			font-family:calibri;
+			text-transform:uppercase;
+			font-weight:600;
+			color:white;
+			letter-spacing:1px;
+			font-size:18px;
+			text-shadow:0 1px 0 rgba(0,0,0,0.5);
+			line-height:50px;
+			text-indent:15px;
+			opacity:0;
+			/*-moz-transition:opacity 1s,left 1s ease;*/
+			-webkit-transition:opacity 1s,left 1s  ease;
+			-o-transition:opacity 1s,left 1s  ease;
+			transition:opacity 1s,left 1s  ease;
+		}
+		#image1:checked ~ #text1,
+		#image2:checked ~ #text2,
+		#image3:checked ~ #text3,
+		#image4:checked ~ #text4{
+			opacity:1;
+			left:0;
+		}
+	</style>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<!-- SLIDER -->
+	<div id="slide">
+		<!---phần chứa input và label-->
+
+		<input type="radio" id="image1" name="slide" class="input" checked>	
+		<label for="image1" class="label" id="button1" ></label>
+
+		<input type="radio" id="image2" name="slide" class="input" >	
+		<label for="image2" class="label" id="button2" ></label>
+
+		<input type="radio" id="image3" name="slide" class="input" >	
+		<label for="image3" class="label" id="button3" ></label>
+
+		<input type="radio" id="image4" name="slide" class="input" >	
+		<label for="image4" class="label" id="button4" ></label>
+
+		<div id="slide_wrap">
+			<img src="1.jpg" width="940" height="400" />
+			<img src="2.jpg" width="940" height="400" />
+			<img src="1.jpg" width="940" height="400" />
+			<img src="2.jpg" width="940" height="400" /> 
+		</div>
+		<h1 id="text1">Black-red model living room</h1><!--title cho ảnh 1-->
+
+		<h1 id="text2">Amsterdam Apartment dining space interior design</h1><!--title cho ảnh 2-->
+
+		<h1 id="text3">Green room interior wide</h1><!--title cho ảnh 3-->
+
+		<h1 id="text4">Wide open tv room design</h1><!--title cho ảnh 4-->
+
+    <!--slide--->
+ 
+    <!--phần chứa tiêu đề của mỗi ảnh-->
+	</div>
+
+
+
+
+</body>
+</html>
