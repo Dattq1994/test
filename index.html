@@ -1,0 +1,107 @@
+
+
+<!-- How TO - Side Navigation -->
+<!-- Create an Animated Side Navigation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web giới thiệu công ty</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+
+</head>
+<body>
+	<style>
+		input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+  
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+   margin: 8px 8px 8px 32px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+		.mySidebar{
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #111;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+
+		.mySidebar a,.mySidebar span {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 20px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+			cursor: pointer;
+		}
+		
+		.mySidebar a:hover{
+			color: #337ab7;
+			border: 1px dotted gray;
+		}
+		#main {
+			transition: margin-left .5s;
+			padding: 16px;
+		}
+		.mySidebar .fa{
+			float: right !important;
+			padding-right: 7px;
+
+		}
+
+	</style>
+	<div id="Sidebar" class="mySidebar">
+		<span href="#" class="closebtn" onclick="closeSide()">&times;</span>
+		<hr>
+		<input type="text" name="search" placeholder="Nhập từ khóa">
+		<a href="">Trang chủ<i class="fa fa-address-book" aria-hidden="true"></i></a>
+		<a href="">Giới thiệu<i class="fa fa-address-book" aria-hidden="true"></i></a>
+		<a href="">Dịch vụ<i class="fa fa-address-book" aria-hidden="true"></i></a>
+		<a href="">Tuyển dụng<i class="fa fa-address-book" aria-hidden="true"></i></a>
+		<a href="">Chính sách<i class="fa fa-address-book" aria-hidden="true"></i></a>
+		<a href="">Liên hệ<i class="fa fa-address-book" aria-hidden="true"></i></a>
+	</div>
+	<div id="main">
+		<h3>Website giới thiệu công ty</h3>
+		<span style="font-size: 30px; cursor: pointer;" onclick="openSide()">&#9776;</span>
+		<script>
+			function openSide(){
+				document.getElementById("Sidebar").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+			}
+			function closeSide(){
+				document.getElementById("Sidebar").style.width = "0";
+				document.getElementById("main").style.marginLeft = "0";
+			}
+		</script>
+	</div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</body>
+</html>
